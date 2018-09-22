@@ -1,0 +1,8 @@
+
+
+-- lancer une instance postgres
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+-- permettre le lancement de boot2docker
+export DOCKER_API_VERSION=1.23
+

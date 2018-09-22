@@ -1,0 +1,14 @@
+group 'com.ecom'
+version '1.0-SNAPSHOT'
+
+
+
+task stopContainers(type: Exec){
+    println 'stop containers'
+    commandLine 'sh', '-c', 'docker stop $(docker ps -q)'
+}
+
+task removeContainers(type: Exec, dependsOn: stopContainers){
+    println 'remove containers'
+    commandLine 'sh', '-c', 'docker rm $(docker ps -a -q)'
+}
